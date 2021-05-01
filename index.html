@@ -16,8 +16,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#24292e">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
     <!-- Fontawsome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
     <script src="https://kit.fontawesome.com/8c55047497.js" crossorigin="anonymous"></script>
@@ -38,76 +38,24 @@
 
 <body class="no-select">
 
-    <!-- song added -->
-    <div class="modal fade" id="songAdded" tabindex="-1" role="dialog" aria-labelledby="songAdded" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header pb-0 float-right" style="border: none;">
-                    <button type="button" class="close p-2" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="changeLanClose">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-header m-auto p-0" style="border: none;">
-                    <h5 class="modal-title changeLanTitle" id="exampleModalLongTitle"><i
-                            class="fas fa-volume-up fa-3x"></i></h5>
-                </div>
-                <div class="modal-body text-center">
-                    La tua canzone è stata aggiunta alla coda.
-                </div>
-                <div class="modal-footer m-auto pt-0" style="border: none;">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Perfetto!</button> -->
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"
-                        onclick="closeSearch()">Perfetto!</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- can't add songs (DON'T USED)-->
-    <div class="modal fade" id="songNotAdded" tabindex="-1" role="dialog" aria-labelledby="songNotAdded"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header pb-0 float-right" style="border: none;">
-                    <button type="button" class="close p-2" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="changeLanClose">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-header m-auto p-0" style="border: none;">
-                    <h5 class="modal-title changeLanTitle" id="exampleModalLongTitle">
-                        <span class="fa-stack fa-lg">
-                            <i class="fas fa-volume-up fa-stack-2x"></i>
-                            <i class="fas fa-slash fa-stack-2x text-danger"></i>
-                        </span>
-                    </h5>
-                </div>
-                <div class="modal-body text-center">
-                    Attualmente non &egrave; possibile aggiungere canzoni alla coda.
-                </div>
-                <div class="modal-footer m-auto pt-0" style="border: none;">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"
-                        onclick="closeSearch()">.·´¯`(&gt;▂&lt;)´¯`·.</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- booth (navbar and search bar) have to be sticky to the top -->
     <div class="sticky-top">
 
         <!-- Navbar container -->
-        <nav class="navbar navbar-dark" style="background-color: #24292e;">
+        <nav class="navbar navbar-dark">
 
             <div class="container-lg p-0">
 
-                <a class="navbar-brand" href="#">YourMusic</a>
+                <a class="navbar-brand" href="#"><span>Your</span> Music</a>
 
                 <form class="form-inline">
 
-                    <button type="button" class="btn btn-sm btn-danger text-white disabled-login" data-container="body"
+                    <!-- <button type="button" class="btn btn-sm btn-danger text-white disabled-login" data-container="body"
                         data-toggle="popover" data-placement="left" data-content="ฅ^•ﻌ•^ฅ">
                         DEMO
-                    </button>
+                    </button> -->
+                    <a href="#" data-container="body" data-toggle="popover" data-placement="left" data-content="ฅ^•ﻌ•^ฅ"
+                        class="demo-cta">DEMO</a>
 
                 </form>
             </div>
@@ -115,32 +63,35 @@
         </nav>
 
         <!-- search bar and music genre carousel -->
-        <div class="container-lg mt-0 p-0 song-div">
+        <div class="  container-lg mt-0 p-0 song-div">
 
             <!-- search field -->
             <div class="input-group mb-0">
 
                 <div class="w-100">
 
-                    <div class="row">
+                    <div class="row search-bar">
 
-                        <div class="col-auto" id="closeSearchButton" style="display: none;">
-                            <button type="button" class="btn btn-danger" style="height: 50px; border-radius: 0;"
-                            onclick="closeSearch()">X</button>
+                        <div class="col-auto left-side" id="closeSearchButton" style="display: none;">
+                            <a href="#" class="close-cta" onclick="closeSearch()">X</a>
+                            <!-- <button type="button" class="btn btn-danger close-cta"
+                                style="height: 50px; border-radius: 0;" onclick="closeSearch()"></button> -->
                         </div>
 
-                        <div class="col">
-                            <input type="text" id="songSearch-input" class="form-control" placeholder="Cosa vuoi ascoltare?"
-                            style="border-radius: 0!important;" autocomplete="off">
+                        <div class="col right-side">
+                            <input type="text" id="songSearch-input" class="form-control"
+                                placeholder="Cosa vuoi ascoltare?" style="border-radius: 0!important;"
+                                autocomplete="off">
                         </div>
 
                     </div>
-                    
+
                 </div>
 
             </div>
 
-            <div class="card w-100" id="out" style="display: none; cursor: pointer; border-top: 0; border-radius: 0;"></div>
+            <div class="card w-100" id="out" style="display: none; cursor: pointer; border-top: 0; border-radius: 0;">
+            </div>
 
         </div>
 
@@ -155,231 +106,6 @@
 
     </div>
 
-    <!-- playlist -->
-    <div class="container-lg">
-
-        <div id="songCard" style="cursor: pointer; border-top: 0;">
-
-            <div class="row pt-4">
-
-                <div class="col-6">
-
-                    <div class="card bg-dark text-white" onclick="openSearch(); $('#songSearch-input').focus();">
-
-                        <span class="card-img"
-                            style="height: 9rem; border: 2px solid #24292e; background: #464545f5; object-fit: cover; filter: blur(1px); -webkit-filter: blur(1px);"></span>
-
-                        <div class="card-img-overlay">
-                            <div class="m-auto text-center" style="width: 70px; height: 70px">
-                                <img class="card-img mt-3" src="dist/imgs/search.png" style="width: 55px;">
-                            </div>
-                            <div class="m-auto text-center">
-                                <h5 class="card-title mt-2">Ricerca</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-6">
-
-                    <div class="card bg-dark text-white" onclick="moodSearch('Rock');">
-
-                        <img class="card-img" src="dist/imgs/rock-cover.jpg"
-                            style="height: 9rem; object-fit: cover; filter: blur(3px); -webkit-filter: blur(3px);">
-
-                        <div class="card-img-overlay">
-                            <div class="m-auto text-center" style="width: 70px; height: 70px">
-                                <img class="card-img" src="dist/imgs/rock.png">
-                            </div>
-                            <div class="m-auto text-center">
-                                <h5 class="card-title mt-2">Rock</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="row pt-5">
-
-                <div class="col-6">
-
-                    <div class="card bg-dark text-white" onclick="moodSearch('Punk');">
-
-                        <img class="card-img" src="dist/imgs/punk-cover.jpg"
-                            style="height: 9rem; object-fit: cover; filter: blur(3px); -webkit-filter: blur(3px);">
-
-                        <div class="card-img-overlay">
-                            <div class="m-auto text-center" style="width: 70px; height: 70px">
-                                <img class="card-img mt-4" src="dist/imgs/punk.png"
-                                    style="-moz-transform: rotate(135deg); -webkit-transform: rotate(135deg); transform: rotate(135deg);">
-                            </div>
-                            <div class="m-auto text-center">
-                                <h5 class="card-title mt-2">Punk</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-6">
-
-                    <div class="card bg-dark text-white" onclick="moodSearch('Eletronic');">
-
-                        <img class="card-img" src="dist/imgs/eletronic-cover.jpg"
-                            style="height: 9rem; object-fit: cover; filter: blur(3px); -webkit-filter: blur(3px);">
-
-                        <div class="card-img-overlay">
-                            <div class="m-auto text-center" style="width: 70px; height: 70px">
-                                <img class="card-img" src="dist/imgs/eletronic.png">
-                            </div>
-                            <div class="m-auto text-center">
-                                <h5 class="card-title mt-2">Eletronic</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="row pt-5">
-
-                <div class="col-6">
-
-                    <div class="card bg-dark text-white" onclick="moodSearch('Top 50 - Italia');">
-
-                        <span class="card-img" style="
-                            height: 9rem; 
-                            background: rgb(27,56,98);
-                            background: linear-gradient(72deg, rgba(27,56,98,1) 0%, rgba(20,67,93,1) 96%);
-                            object-fit: cover; filter: blur(1px); 
-                            -webkit-filter: blur(1px);">
-                        </span>
-
-                        <div class="card-img-overlay">
-                            <div class="m-auto text-center" style="width: 70px; height: 70px">
-                                <h5 class="card-title mt-2">Top 50</h5>
-                                <hr style="border: 1px solid #fff;">
-                                <h5 class="card-title mt-2">ITALIA</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-6">
-
-                    <div class="card bg-dark text-white" onclick="moodSearch('Top 50 - Globale');">
-
-                        <span class="card-img" style="
-                            height: 9rem; 
-                            background: rgb(30,50,100);
-                            background: linear-gradient(0deg, rgba(30,50,100,1) 0%, rgba(29,129,119,1) 100%);
-                            object-fit: cover; filter: blur(1px); 
-                            -webkit-filter: blur(1px);">
-                        </span>
-
-                        <div class="card-img-overlay">
-                            <div class="m-auto text-center" style="width: 70px; height: 70px">
-                                <h5 class="card-title mt-2">Top 50</h5>
-                                <hr style="border: 1px solid #fff;">
-                                <h5 class="card-title mt-2" style="font-size: 1rem">GLOBAL</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="row pt-5">
-
-                <div class="col-6">
-
-                    <div class="card bg-dark text-white" onclick="moodSearch('Hot Hits - Italia');">
-
-                        <span class="card-img" style="
-                            height: 9rem; 
-                            background: rgb(30,50,100);
-                            background: linear-gradient(0deg, rgba(30,50,100,1) 0%, rgba(143,35,59,1) 100%);
-                            object-fit: cover; filter: blur(1px); 
-                            -webkit-filter: blur(1px);">
-                        </span>
-
-                        <div class="card-img-overlay">
-                            <div class="m-auto text-center" style="width: 70px; height: 70px;">
-                                <h5 class="card-title mt-2">Hot</h5>
-                                <hr style="border: 1px solid #fff;">
-                                <h5 class="card-title mt-2">Hits</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="col-6">
-
-                    <div class="card bg-dark text-white" onclick="moodSearch('Mezzanotte Chill Rap');">
-
-                        <span class="card-img" style="
-                            height: 9rem; 
-                            background: rgb(18,182,111);
-                            background: linear-gradient(180deg, rgba(18,182,111,1) 0%, rgba(79,55,79,1) 100%);
-                            object-fit: cover; filter: blur(1px); 
-                            -webkit-filter: blur(1px);">
-                        </span>
-
-                        <div class="card-img-overlay">
-                            <div class="m-auto text-center" style="width: 70px; height: 70px;">
-                                <h5 class="card-title mt-2">Chill</h5>
-                                <hr style="border: 1px solid #fff;">
-                                <h5 class="card-title mt-2">Rap</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="row" style="height: 110px;"></div>
-
-        </div>
-    </div>
-
-
-    </div>
-
-    <!-- current track -->
-    <div class="bottom">
-        <div class="container-lg pt-4">
-            <div class="row">
-                <div class="col queueList min">
-
-                    <ul class="list-group min" id="queue">
-
-                        <li class="list-group-item p-2" id="currentTrack"
-                            style="border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -527,7 +253,7 @@
                 height: "50px"
             });
             $('#closeSearchButton').addClass('pr-0');
-            $('#closeSearchButton').show('fast', function() {
+            $('#closeSearchButton').show('fast', function () {
                 $('#songSearch-input').parent().addClass('pl-0');
             });
         }
@@ -553,32 +279,32 @@
 
                     if (data.tracks.items.length == 0) {
                         $('#out').append(`
-                        <div class="row" style="background-color: #f6f8fa; border: none;">
-                            <div class="col text-center" style="color: rgba(0,0,0,.4);">
-                                <p class="display-2">(&#62;_&#60;)</p>
-                                <p class="h5">la ricerca non ha prodotto alcun risultato.</p>
-                            </div>
+                    <div class="row" style="background-color: #f6f8fa; border: none;">
+                        <div class="col text-center" style="color: rgba(0,0,0,.4);">
+                            <p class="display-2">(&#62;_&#60;)</p>
+                            <p class="h5">la ricerca non ha prodotto alcun risultato.</p>
                         </div>
-                    `);
+                    </div>
+                `);
                     }
 
                     $(data.tracks.items).each(function (index, element) {
 
                         $('#out').append(`
-                            <div class="row mx-0 song-item" onmouseover="$(this).css('background-color', '#aeaeae');" 
-                                                            onmouseout="$(this).css('background-color', '#ffffff');" 
-                                                            onclick="this.style.backgroundColor = '#aeaeae'; sendSong('${element.uri}');"
-                            >
-                                <div class="col-auto my-auto px-0">
-                                    <img class="img-fluid" src='${element.album.images[2].url}'></img>
-                                </div>
-                                <div class="col px-2 my-auto">
-                                    <p class="h5 song-title">${element.name}</p>
-                                    <p class="h6 song-artist">${element.artists[0].name}</p>
-                                </div>
+                        <div class="row mx-0 song-item" onmouseover="$(this).css('background-color', '#aeaeae');" 
+                                                        onmouseout="$(this).css('background-color', '#ffffff');" 
+                                                        onclick="this.style.backgroundColor = '#aeaeae'; sendSong('${element.uri}');"
+                        >
+                            <div class="col-auto my-auto px-0">
+                                <img class="img-fluid" src='${element.album.images[2].url}'></img>
                             </div>
-                            <hr class="m-0" style="color: #000;">
-                        `);
+                            <div class="col px-2 my-auto">
+                                <p class="h5 song-title">${element.name}</p>
+                                <p class="h6 song-artist">${element.artists[0].name}</p>
+                            </div>
+                        </div>
+                        <hr class="m-0" style="color: #000;">
+                    `);
 
                     });
                 } else { // playlist results
@@ -587,20 +313,20 @@
                         // console.log(data);
 
                         $('#out').append(`
-                            <div class="row mx-0 song-item" onmouseover="$(this).css('background-color', '#aeaeae');" 
-                                                            onmouseout="$(this).css('background-color', '#ffffff');" 
-                                                            onclick="this.style.backgroundColor = '#aeaeae'; sendSong('${element.track.uri}');"
-                            >
-                                <div class="col-auto my-auto px-0">
-                                    <img class="img-fluid" src='${element.track.album.images[2].url}'></img>
-                                </div>
-                                <div class="col px-2 my-auto">
-                                    <p class="h5 song-title">${element.track.name}</p>
-                                    <p class="h6 song-artist">${element.track.artists[0].name}</p>
-                                </div>
+                        <div class="row mx-0 song-item" onmouseover="$(this).css('background-color', '#aeaeae');" 
+                                                        onmouseout="$(this).css('background-color', '#ffffff');" 
+                                                        onclick="this.style.backgroundColor = '#aeaeae'; sendSong('${element.track.uri}');"
+                        >
+                            <div class="col-auto my-auto px-0">
+                                <img class="img-fluid" src='${element.track.album.images[2].url}'></img>
                             </div>
-                            <hr class="m-0" style="color: #000;">
-                        `);
+                            <div class="col px-2 my-auto">
+                                <p class="h5 song-title">${element.track.name}</p>
+                                <p class="h6 song-artist">${element.track.artists[0].name}</p>
+                            </div>
+                        </div>
+                        <hr class="m-0" style="color: #000;">
+                    `);
 
                     });
                 }
@@ -617,34 +343,34 @@
                 if (data === null) {
                     online = false;
                     $('#currentTrack').html(`
-                        
-                            <div class="row px-3 py-2 text-center">
+                    
+                        <div class="row px-3 py-2 text-center">
 
-                                <div class="col">
-                                    <p class="h5 m-0">Il servizio non &egrave; attualmente disponibile</p>
-                                </div>
-
+                            <div class="col">
+                                <p class="h5 m-0">Il servizio non &egrave; attualmente disponibile</p>
                             </div>
-                        `);
+
+                        </div>
+                    `);
 
                     oldSong = ``;
                 }
                 else {
                     online = true;
                     var newSong = `
-                            <div class="row p-1 pr-4">
+                        <div class="row p-1 pr-4">
 
-                                <div class="col-auto my-auto">
-                                    <img class="img-fluid"
-                                        src="${data.item.album.images[2].url}">
-                                </div>
-                                <div class="col my-auto pl-0">
-                                    <p class="h5 song-title">${data.item.name}</p>
-                                    <p class="h6 song-title">${data.item.artists[0].name}</p>
-                                </div>
+                            <div class="col-auto my-auto">
+                                <img class="img-fluid"
+                                    src="${data.item.album.images[2].url}">
+                            </div>
+                            <div class="col my-auto pl-0">
+                                <p class="h5 song-title">${data.item.name}</p>
+                                <p class="h6 song-title">${data.item.artists[0].name}</p>
+                            </div>
 
-                                </div>
-                        `;
+                            </div>
+                    `;
                     if (newSong != oldSong) {
                         $('#currentTrack').html(newSong);
                         oldSong = newSong;

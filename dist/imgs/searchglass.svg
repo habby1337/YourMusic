@@ -1,0 +1,7 @@
+<svg id="Component_6_1" data-name="Component 6 – 1" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+  <g id="Ellipse_3" data-name="Ellipse 3" fill="none" stroke="#25f97a" stroke-width="3">
+    <circle cx="11.875" cy="11.875" r="11.875" stroke="none"/>
+    <circle cx="11.875" cy="11.875" r="10.375" fill="none"/>
+  </g>
+  <path id="Rectangle_8" data-name="Rectangle 8" d="M0,0H16.934a2.2,2.2,0,0,1,2.2,2.2v0a2.2,2.2,0,0,1-2.2,2.2H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(21.472 18.366) rotate(45)" fill="#25f97a"/>
+</svg>

@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+:root {
+    --primary-color: #1db954;
+    --secondary-color: #191414;
+    --bg-color: #f2f2f2;
+}
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+body {
+    font-family: "Poppins";
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+nav {
+    background-color: #191414;
+    padding: 1em;
+
+    .navbar-brand {
+        text-decoration: none;
+        font-weight: regular;
+        font-size: 1.5em;
+        color: #707070;
+        span {
+            color: var(--primary-color);
+        }
+    }
+
+    .container-lg {
+        display: flex;
+        place-content: space-between;
+    }
+
+    .demo-cta {
+        background: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        padding: 0.2em 1em;
+        font-weight: regular;
+        border-radius: 3em;
+        display: inline-block;
+    }
+}
+
+.search-bar {
+    // display: flex;
+    display: flex;
+    // justify-content: space-around;
+
+    // place-content: space-between;
+
+    .left-side {
+        margin: 0.9em 0em 0 0em;
+    }
+
+    input {
+        outline: 0;
+
+        border: 0 solid;
+        border-radius: 3em;
+        border-color: var(--bg-color);
+        background-color: var(--bg-color);
+        color: var(--secondary-color);
+        padding-left: 1em;
+        transition: width 0.4s ease-in-out;
+        height: 6em;
+        // background: url("../imgs/searchglass.svg") no-repeat right 25px;
+    }
+}
+
+.close-cta {
+    background-color: #c82333;
+    color: white;
+    text-decoration: none;
+    padding: 1em 0.5em;
+}
